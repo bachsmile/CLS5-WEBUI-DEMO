@@ -15,6 +15,8 @@ loadFonts()
 // Create vue app
 const app = createApp(App)
 
+app.provide('$msg', 'hello')
+
 // Use plugins
 app.use(vuetify)
 app.use(createPinia())

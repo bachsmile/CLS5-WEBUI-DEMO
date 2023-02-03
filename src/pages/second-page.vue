@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { inject } from 'vue'
+
+const $msg = inject('$msg') // injecting in a component that wants it
+
+console.log($msg)
+</script>
+
 <template>
   <div>
     <VCard title="Create Awesome 🙌">
