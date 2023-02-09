@@ -3,6 +3,7 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import { emailValidator, requiredValidator } from '@validators'
+import axios from '@axios'
 
 import authV2LoginIllustrationBorderedDark from '@/assets/images/pages/auth-v2-login-illustration-bordered-dark.png'
 import authV2LoginIllustrationBorderedLight from '@/assets/images/pages/auth-v2-login-illustration-bordered-light.png'
@@ -17,18 +18,63 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
 const isPasswordVisible = ref(false)
 
-const email = ref('admin@demo.com')
-const password = ref('admin')
+const email = ref('sinhtv')
+const password = ref('123123')
 const rememberMe = ref(false)
 const router = useRouter()
 
+interface Response {
+  code: number
+  data: any
+  errors: any
+  message: any
+  [propName: string]: any
+}
+interface Payload {
+  pageNumber: number
+  pageSize: number
+  keyword: string
+}
+
 const handleLogin = () => {
   const userData = {
-    role: 'admin',
+    email: email.value,
+    password: password.value,
+    captcha: '',
+    remember: false,
   }
 
-  window.localStorage.setItem('userData', JSON.stringify(userData))
-  router.push({ name: 'home' })
+  axios.post<Response>('/user/login', userData)
+    .then(r => {
+      const { accessToken, userProfile, refreshToken } = r.data
+
+      localStorage.setItem('userProfile', userProfile)
+      localStorage.setItem('accessToken', accessToken)
+      localStorage.setItem('refreshToken', refreshToken)
+
+      // router.push({ name: 'home' })
+    })
+    .catch(e => {
+      // console.error(e)
+    })
+}
+
+const getApi = () => {
+  const payload = {
+    pageNumber: 1,
+    pageSize: 10,
+    keyword: '',
+  }
+
+  axios.get<Response>('/usertype/get-paging', { params: payload })
+    .then(r => {
+      // console.log(r)
+
+      // router.push({ name: 'home' })
+    })
+    .catch(e => {
+      // console.error(e)
+    })
 }
 </script>
 
@@ -67,6 +113,9 @@ const handleLogin = () => {
         :max-width="500"
         class="mt-12 mt-sm-0 pa-4"
       >
+        <button @click="getApi">
+          CallAPi
+        </button>
         <VCardText>
           <VNodeRenderer
             :nodes="themeConfig.app.logo"
