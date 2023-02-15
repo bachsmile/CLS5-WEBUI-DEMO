@@ -1,3 +1,3 @@
 export const setWindowDefineProperty = (key: string, value: any) => {
-  window[key] = value
+  window[key as never] = value
 }
