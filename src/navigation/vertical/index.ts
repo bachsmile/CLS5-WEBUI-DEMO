@@ -21,4 +21,9 @@ export default [
     to: { name: 'test' },
     icon: { icon: 'tabler-file' },
   },
+  {
+    title: 'Report',
+    to: { name: 'report-user' },
+    icon: { icon: 'tabler-file' },
+  },
 ] as VerticalNavItems
