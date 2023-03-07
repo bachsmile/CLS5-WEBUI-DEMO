@@ -19,4 +19,3 @@ export default defineComponent({
   flex-direction: column;
 }
 </style>
-myArray = ["Bob", "Fred"];

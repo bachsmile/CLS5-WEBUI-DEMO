@@ -11,8 +11,6 @@ const router = createRouter({
     //     const userData = JSON.parse(localStorage.getItem('userData') || '{}')
     //     const userRole = userData && userData.role ? userData.role : null
 
-    //     console.log(userData)
-
     //     if (userRole === 'admin')
     //       return { name: 'dashboards-analytics' }
     //     if (userRole === 'client')

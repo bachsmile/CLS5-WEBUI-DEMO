@@ -68,7 +68,6 @@ const getApi = () => {
 
   axios.get<Response>('/usertype/get-paging', { params: payload })
     .then(r => {
-      // console.log(r)
 
       // router.push({ name: 'home' })
     })

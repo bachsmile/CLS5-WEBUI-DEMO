@@ -26,4 +26,25 @@ export default [
     to: { name: 'report-user' },
     icon: { icon: 'tabler-file' },
   },
+  {
+    title: 'validate',
+    to: { name: 'validateFile' },
+    icon: { icon: 'tabler-file' },
+  },
+  {
+    title: 'tree',
+    to: { name: 'tree' },
+    icon: { icon: 'tabler-file' },
+  },
+  {
+    title: 'guilde',
+    to: { name: 'guilde' },
+    icon: { icon: 'tabler-file' },
+    children: [
+      { title: 'List', to: 'apps-invoice-list' },
+      { title: 'Preview', to: { name: 'apps-invoice-preview-id', params: { id: '5036' } } },
+      { title: 'Edit', to: { name: 'apps-invoice-edit-id', params: { id: '5036' } } },
+      { title: 'Add', to: 'apps-invoice-add' },
+    ],
+  },
 ] as VerticalNavItems

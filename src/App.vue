@@ -24,23 +24,26 @@ syncConfigThemeWithVuetifyTheme()
     <VApp>
       <VMain>
         <RouterView />
-        <div style="position: absolute; top: 50%; left: 40%;">
-          {{ isRender }}
-        </div>
 
-        <button
+        <!--
+          <div style="position: absolute; top: 50%; left: 40%;">
+          {{ isRender }}
+          </div>
+
+          <button
           style="position: absolute; top: 50%; left: 50%;"
           @click="changeValue('isRender', false)"
-        >
+          >
           ẩn
-        </button>
+          </button>
 
-        <button
+          <button
           style="position: absolute; top: 50%; left: 60%;"
           @click="changeValue('isRender', true)"
-        >
+          >
           mở
-        </button>
+          </button>
+        -->
       </VMain>
     </VApp>
   </VLocaleProvider>

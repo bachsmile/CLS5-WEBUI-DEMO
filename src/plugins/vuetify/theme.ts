@@ -32,8 +32,17 @@ const theme: VuetifyOptions['theme'] = {
         'grey-800': '#424242',
         'grey-900': '#212121',
         'perfect-scrollbar-thumb': '#DBDADE',
+        'primary-50': '#EFF8FF',
+        'primary-100': '#D1E9FF',
+        'primary-200': '#B2DDFF',
+        'primary-300': '#84CAFF',
+        'primary-400': '#53B1FD',
+        'primary-500': '#2E90FA',
+        'primary-600': '#1570EF',
+        'primary-700': '#175CD3',
+        'primary-800': '#1849A9',
+        'primary-900': '#194185',
       },
-
       variables: {
         'border-color': '#4B465C',
         'medium-emphasis-opacity': 0.68,

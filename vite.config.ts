@@ -33,11 +33,11 @@ export default defineConfig({
     }),
     Pages({}),
     Layouts({
-      layoutsDirs: 'src/layouts',
-      defaultLayout: 'default',
+      // layoutsDirs: 'src/layouts',
+      // defaultLayout: 'default',
     }),
     Components({
-      dirs: ['src/@core/components', 'src/views/demos'],
+      dirs: ['src/@core/components', 'src/views/demos', 'src/typescript/global/private'],
       dts: true,
     }),
     AutoImport({
