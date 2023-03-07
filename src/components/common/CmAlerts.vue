@@ -10,9 +10,11 @@ const props = withDefaults(defineProps<Props>(), {
   border: undefined,
   closable: false,
   width: undefined,
+  class: undefined,
+  position: undefined,
 })
 
-const position = ['relative', 'absolute', 'static', 'fixed', 'sticky']
+const position = ['relative', 'absolute', 'static', 'fixed', 'sticky'] as const
 interface Props {
   icon?: any
   title?: string
@@ -25,8 +27,7 @@ interface Props {
   closable?: boolean
   width?: string | number
   class?: Array<string> | string
-
-  // position: typeof position
+  position?: typeof position[number]
 }
 </script>
 

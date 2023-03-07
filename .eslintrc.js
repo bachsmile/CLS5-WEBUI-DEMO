@@ -28,7 +28,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
     // indentation (Already present in TypeScript)
-    'indent': ['error', 2],
+    'indent': ['error', 2, { SwitchCase: 1 }],
 
     // Enforce trailing comma (Already present in TypeScript)
     'comma-dangle': ['error', 'always-multiline'],
@@ -107,6 +107,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['error'],
 
     '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // Plugin: eslint-plugin-promise
     'promise/always-return': 'off',
@@ -114,7 +115,7 @@ module.exports = {
 
     // ESLint plugin vue
     'vue/block-tag-newline': 'error',
-    'vue/component-api-style': 'error',
+    'vue/component-api-style': 'off',
     'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: false }],
     'vue/custom-event-name-casing': ['error', 'camelCase', {
       ignores: [
@@ -138,7 +139,7 @@ module.exports = {
     'vue/no-useless-v-bind': 'error',
     'vue/padding-line-between-blocks': 'error',
     'vue/prefer-separate-static-class': 'error',
-    'vue/prefer-true-attribute-shorthand': 'error',
+    'vue/prefer-true-attribute-shorthand': 'off',
     'vue/v-on-function-call': 'error',
 
     // -- Extension Rules

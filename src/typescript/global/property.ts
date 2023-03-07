@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import { reactive } from 'vue'
 
 interface GlobalState {
@@ -18,4 +20,5 @@ const changeValue = (key: string, value: any) => {
 export const globals = ({
   ...toRefs(globalState),
   changeValue,
+  _,
 })

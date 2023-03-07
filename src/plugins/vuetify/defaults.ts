@@ -43,7 +43,7 @@ export default {
   },
   VCheckbox: {
     // set v-checkbox default color to primary
-    color: 'primary',
+    color: 'primary-600',
     density: 'comfortable',
     hideDetails: 'auto',
   },

@@ -22,7 +22,7 @@
     ],
     "rules": {
         "max-line-length": [
-            120,
+            150,
             {
                 "ignore": "comments"
             }
